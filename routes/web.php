@@ -29,7 +29,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/test', function() {return "Goodbye";});
 
-Route::get('/rooms', ShowRoomsController::class);
+Route::get('/rooms/{roomType?}', ShowRoomsController::class);
 
 
 /**
@@ -49,6 +49,7 @@ Route::get('/rooms', ShowRoomsController::class);
  * Laravel allow us to compact all those rout in one line of code.
  */
 Route::resource('bookings',App\Http\Controllers\BookingController::class);
+Route::resource('room_types',App\Http\Controllers\RoomTypeController::class);
 
 
 
